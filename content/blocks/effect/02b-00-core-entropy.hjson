@@ -1,0 +1,20 @@
+type: CoreBlock
+name: Core: Entropy
+requirements: [
+  08c-00-dysprosium/1600
+]
+isFirstTier: true
+size: 4
+squareSprite: false
+alwaysUnlocked: true
+unitType: 01t-00-ephemeris
+health: 900
+itemCapacity: 2500
+unitCapModifier: 8
+category: effect
+research: {
+  planet: dedefarius
+  root: true
+  name: Dedefarius
+  requiresUnlock: false
+}

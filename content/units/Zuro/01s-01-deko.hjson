@@ -1,0 +1,115 @@
+type: flying
+name: Deko
+health: 280
+armor: 2
+speed: 3.2
+accel: 0.11
+drag: 0.06
+hitSize: 10
+rotateSpeed: 7
+lowAltitude: true
+flying: true
+circleTarget: true
+faceTarget: true
+drawCell: true
+outlineColor: 1D1D23
+engineColor: 55D97C
+engineOffset: 7
+engineSize: 2.5
+omniMovement: true
+
+trailLength: 8
+trailColor: 55D97C
+
+mineTier: 3
+mineSpeed: 2.5
+buildSpeed: 0
+itemCapacity: 25
+
+controller: BuilderAI
+mineWalls: true
+mineFloor: true
+buildBeamOffset: 3
+
+mineItems: [
+  08c-00-dysprosium
+  08c-01-denthrahite
+  08c-03-fragileum
+]
+
+targetAir: true
+targetGround: true
+range: 90
+
+weapons: [
+  {
+    name: 01s-01-deko-leech
+    x: 5.5
+    y: 0
+    range: 10
+    reload: 8
+    mirror: true
+    rotate: false
+    alternate: false
+    rotateSpeed: 10
+    shootSound: shootDeko
+    shootY: 5
+    recoil: 1
+    shadow: -1
+    controllable: true
+    autoTarget: true
+    top: false
+    
+    bullet: {
+      type: SapBulletType
+      damage: 12
+      range: 10
+      
+      color: 84F491
+      beamEffect: {
+        type: ParticleEffect
+        particles: 1
+        length: 0
+        lifetime: 8
+        sizeFrom: 3
+        sizeTo: 0
+        colorFrom: ffffff
+        colorTo: 62AE7F
+      }
+      hitEffect: {
+        type: ParticleEffect
+        particles: 6
+        length: 8
+        lifetime: 12
+        sizeFrom: 2
+        sizeTo: 0
+        colorFrom: 84F491
+        colorTo: 62AE7F
+        cone: 360
+      }
+      
+      healPercent: 0.5
+      
+      shootEffect: {
+        type: ParticleEffect
+        particles: 4
+        length: 6
+        lifetime: 10
+        sizeFrom: 1.5
+        sizeTo: 0
+        colorFrom: 84F491
+        colorTo: 62AE7F
+        cone: 25
+      }
+    }
+  }
+]
+
+research: {
+  parent: 01s-00-zuro
+  requirements: [
+    08c-00-dysprosium/400
+    08c-01-denthrahite/500
+    08c-03-fragileum/300
+  ]
+}

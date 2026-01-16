@@ -1,0 +1,111 @@
+type: flying
+name: Teta
+health: 350
+armor: 5
+speed: 3.2
+accel: 0.11
+drag: 0.06
+hitSize: 10
+rotateSpeed: 9
+lowAltitude: true
+flying: true
+circleTarget: true
+faceTarget: true
+drawCell: true
+outlineColor: 1D1D23
+engineColor: 55D97C
+engineOffset: 13
+engineSize: 4
+omniMovement: true
+
+trailLength: 10
+trailColor: 55D97C
+
+mineTier: 3
+mineSpeed: 2.5
+buildSpeed: 3
+itemCapacity: 30
+
+controller: BuilderAI
+mineWalls: true
+mineFloor: true
+buildBeamOffset: 3
+
+mineItems: [
+  08c-00-dysprosium
+  08c-01-denthrahite
+  08c-03-fragileum
+]
+
+targetAir: false
+targetGround: true
+range: 90
+
+weapons: [
+  {
+    name: 01s-02-teta-cannon
+    x: 9
+    y: 0
+    range: 20
+    reload: 15
+    mirror: true
+    rotate: false
+    alternate: true
+    rotateSpeed: 10
+    shootSound: shootTeta
+    shootY: 10
+    recoil: 3
+    shadow: -1
+    controllable: true
+    autoTarget: true
+    top: false
+    
+    bullet: {
+      type: SapBulletType
+      sapStrength: 0.8
+      length: 100
+      damage: 20
+      shootEffect: shootSmall
+      hitColor: 84f491
+      color: 84f491
+      despawnEffect: none
+      width: 0.55
+      lifetime: 25
+      knockback: -1
+      }
+      hitEffect: {
+        type: ParticleEffect
+        particles: 6
+        length: 8
+        lifetime: 12
+        sizeFrom: 2
+        sizeTo: 0
+        colorFrom: 84F491
+        colorTo: 62AE7F
+        cone: 360
+      }
+      
+      healPercent: 5
+      
+      shootEffect: {
+        type: ParticleEffect
+        particles: 4
+        length: 6
+        lifetime: 10
+        sizeFrom: 1.5
+        sizeTo: 0.001
+        colorFrom: 84F491
+        colorTo: 62AE7F
+        cone: 25
+      }
+    }
+]
+
+research: {
+  parent: 01s-01-deko
+  requirements: [
+    08c-00-dysprosium/400
+    08c-01-denthrahite/500
+    08c-03-fragileum/300
+  ]
+}

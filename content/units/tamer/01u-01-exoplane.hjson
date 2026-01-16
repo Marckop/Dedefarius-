@@ -1,0 +1,223 @@
+type: legs
+name: Exoplane
+health: 600
+armor: 4
+speed: 0.5
+rotateSpeed: 3
+hitSize: 10
+drag: 0.38
+accel: 0.45
+hovering: false
+allowLegStep: true
+groundLayer: 74
+legCount: 4
+legLength: 18
+legBaseOffset: 3.5
+legMoveSpace: 1.1
+legExtension: 2.2
+legPairOffset: 0.55
+legLengthScl: 0.96
+rippleScale: 0.9
+stepShake: 0.35
+legSplashDamage: 5
+legSplashRange: 18
+outlineColor: 1D1D23
+research: 01u-01-tamer
+
+weapons: [
+  {
+    name: exoplane-beam
+    x: 4.5
+    y: -2
+    mirror: true
+    alternate: true
+    rotate: true
+    rotateSpeed: 4.5
+    reload: 25
+    recoil: 0.5
+    shake: 0.8
+    shootY: 3
+    shootSound: shootMissilePlasma
+    
+    bullet: {
+      type: LaserBulletType
+      damage: 20
+      length: 70
+      width: 8
+      lifetime: 12
+      
+      colors: [
+        FF6B0080
+        FF8C00B0
+        FFA500E0
+        FFD700FF
+      ]
+      
+      lightningSpacing: 12
+      lightningLength: 2
+      lightningDelay: 0.5
+      lightningLengthRand: 3
+      lightningDamage: 3
+      lightningAngleRand: 20
+      lightningColor: FFA500
+      
+      sideAngle: 25
+      sideWidth: 1
+      sideLength: 40
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 18
+            lifetime: 15
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: FFD700
+            colorTo: FF6B00
+          }
+          {
+            type: ParticleEffect
+            particles: 6
+            length: 20
+            lifetime: 18
+            sizeFrom: 2.5
+            sizeTo: 0
+            colorFrom: FFA500
+            colorTo: FF6B00
+            cone: 360
+          }
+        ]
+      }
+      
+      shootEffect: {
+        type: ParticleEffect
+        particles: 8
+        length: 18
+        lifetime: 20
+        sizeFrom: 3
+        sizeTo: 0
+        colorFrom: FFD700
+        colorTo: FF8C00
+        cone: 25
+      }
+    }
+  }
+  {
+    name: exoplane-artillery
+    x: 0
+    y: -4
+    mirror: false
+    rotate: true
+    rotateSpeed: 3
+    reload: 80
+    recoil: 2
+    shake: 1.2
+    shootY: 4
+    shootSound: shootArtillery
+    
+    shoot: {
+      shots: 3
+      shotDelay: 16
+    }
+    
+    bullet: {
+      type: ArtilleryBulletType
+      damage: 15
+      speed: 2.5
+      lifetime: 70
+      width: 9
+      height: 12
+      splashDamage: 24
+      splashDamageRadius: 26
+      
+      frontColor: FFD700
+      backColor: FF8C00
+      trailColor: FFA500
+      trailWidth: 2.5
+      trailLength: 10
+      
+      fragBullets: 4
+      fragLifeMin: 0.3
+      fragVelocityMin: 0.5
+      fragVelocityMax: 1.2
+      fragBullet: {
+        type: BasicBulletType
+        damage: 5
+        speed: 2
+        lifetime: 15
+        width: 5
+        height: 7
+        frontColor: FFA500
+        backColor: FF6B00
+        
+        hitEffect: {
+          type: ParticleEffect
+          particles: 4
+          length: 12
+          lifetime: 15
+          sizeFrom: 2
+          sizeTo: 0
+          colorFrom: FFA500
+          colorTo: FF6B00
+        }
+      }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 35
+            lifetime: 25
+            strokeFrom: 3
+            strokeTo: 0
+            colorFrom: FFD700
+            colorTo: FF6B00
+          }
+          {
+            type: ParticleEffect
+            particles: 12
+            length: 40
+            lifetime: 30
+            sizeFrom: 4
+            sizeTo: 0
+            colorFrom: FFD700
+            colorTo: FF6B00
+            cone: 360
+          }
+        ]
+      }
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 15
+            lifetime: 20
+            strokeFrom: 2.5
+            strokeTo: 0
+            colorFrom: FFA500
+            colorTo: FF6B00
+          }
+          {
+            type: ParticleEffect
+            particles: 10
+            length: 25
+            lifetime: 25
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: FFD700
+            colorTo: FF8C00
+            cone: 30
+          }
+        ]
+      }
+    }
+  }
+]

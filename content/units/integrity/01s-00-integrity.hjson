@@ -1,0 +1,189 @@
+type: flying
+name: Integrity
+health: 200
+armor: 3
+speed: 3
+accel: 0.08
+drag: 0.04
+hitSize: 10
+rotateSpeed: 5
+lowAltitude: true
+flying: true
+circleTarget: true
+faceTarget: true
+drawCell: true
+outlineColor: 1D1D23
+engineColor: FFA665
+engineOffset: 7
+engineSize: 2.5
+trailLength: 8
+trailColor: FFA665
+research: 04g-01-airfield-workshop
+
+weapons: [
+  {
+    name: integrity-cannon
+    x: 0
+    y: 0
+    reload: 100
+    mirror: false
+    rotate: false
+    shootSound: missile
+    shootY: 4
+    recoil: 2
+    shake: 1
+    shadow: -1
+    layerOffset: -0.5
+    
+    bullet: {
+      type: MissileBulletType
+      sprite: missile-large
+      speed: 2.5
+      lifetime: 100
+      damage: 35
+      splashDamage: 20
+      splashDamageRadius: 25
+      
+      width: 6
+      height: 10
+      shrinkY: 0
+      shrinkX: 0
+      
+      frontColor: ffaa00
+      backColor: ff6600
+      trailColor: ff6600
+      
+      homingPower: 0.085
+      homingRange: 120
+      homingDelay: 8
+      
+      weaveScale: 4
+      weaveMag: 1.5
+      
+      trailWidth: 2
+      trailLength: 10
+      trailInterval: 2
+      
+      hitSound: explosion
+      
+      hittable: true
+      absorbable: true
+      reflectable: true
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 10
+            length: 15
+            lifetime: 20
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: ffaa00
+            colorTo: ff6600
+            cone: 25
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 15
+            lifetime: 15
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: ffaa00
+            colorTo: ff6600
+          }
+        ]
+      }
+      
+      smokeEffect: {
+        type: ParticleEffect
+        particles: 8
+        length: 20
+        lifetime: 30
+        sizeFrom: 4
+        sizeTo: 0
+        colorFrom: 808080
+        colorTo: 404040
+      }
+      
+      trailEffect: {
+        type: ParticleEffect
+        particles: 3
+        length: 8
+        lifetime: 20
+        sizeFrom: 2
+        sizeTo: 0
+        colorFrom: ffaa00
+        colorTo: ff6600
+      }
+      trailInterval: 4
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 35
+            lifetime: 20
+            strokeFrom: 3
+            strokeTo: 0
+            colorFrom: ffaa00
+            colorTo: ff6600
+          }
+          {
+            type: ParticleEffect
+            particles: 20
+            length: 40
+            lifetime: 30
+            sizeFrom: 4
+            sizeTo: 0
+            colorFrom: ffaa00
+            colorTo: ff6600
+            cone: 360
+          }
+          {
+            type: ParticleEffect
+            particles: 15
+            length: 30
+            lifetime: 25
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: ffffff
+            colorTo: ffaa00
+            cone: 360
+          }
+        ]
+      }
+      
+      despawnEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 10
+            length: 20
+            lifetime: 20
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: ffaa00
+            colorTo: ff6600
+            cone: 360
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 20
+            lifetime: 15
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: ff6600
+            colorTo: ffaa00
+          }
+        ]
+      }
+    }
+  }
+]

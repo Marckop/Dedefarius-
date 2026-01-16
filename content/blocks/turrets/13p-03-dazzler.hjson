@@ -1,0 +1,219 @@
+type: PowerTurret
+name: Dazzler
+size: 3
+health: 1200
+reload: 80
+range: 240
+shootSound: shootMissilePlasma
+rotateSpeed: 1.5
+recoil: 3
+shake: 2
+category: turret
+research: {
+  root: false
+  parent: 13p-02-burdent
+  planet: dedefarius
+}
+
+consumes: {
+  power: 6
+  coolant: {
+  liquid: {
+    liquid: water
+    amount: 0.2
+    boost: true
+    optional: true
+  }
+}
+}
+
+shoot: {
+  firstShotDelay: 50
+}
+
+drawer: {
+  type: DrawTurret
+  basePrefix: reinforced-
+  parts: [
+    {
+      type: RegionPart
+      suffix: -barrel
+      progress: recoil
+      moveY: -3
+      mirror: false
+      under: true
+    }
+    {
+      type: HaloPart
+      progress: warmup
+      color: CD59E7
+      layer: 110
+      y: 0
+      radius: 3
+      tri: true
+      shapes: 3
+      triLength: 0
+      triLengthTo: 5
+      haloRadius: 8
+      haloRotation: 0
+      haloRotateSpeed: 1.5
+    }
+    {
+      type: HaloPart
+      progress: warmup
+      color: FFAAEF
+      layer: 110
+      y: 0
+      radius: 2
+      tri: true
+      shapes: 3
+      triLength: 0
+      triLengthTo: 3
+      haloRadius: 5
+      haloRotation: 90
+      haloRotateSpeed: -2
+    }
+  ]
+}
+
+shootType: {
+  type: LaserBoltBulletType
+  damage: 75
+  speed: 5
+  lifetime: 48
+  width: 6
+  height: 20
+  frontColor: CD59E7
+  backColor: FFAAEF
+  trailColor: CD59E7
+  trailWidth: 3
+  trailLength: 10
+  trailEffect: {
+    type: ParticleEffect
+    particles: 3
+    length: 0
+    lifetime: 25
+    sizeFrom: 3
+    sizeTo: 0
+    colorFrom: CD59E7
+    colorTo: FFAAEF
+    cone: 360
+  }
+  trailInterval: 3
+  
+  chargeEffect: {
+    type: MultiEffect
+    effects: [
+      {
+        type: WaveEffect
+        sizeFrom: 30
+        sizeTo: 0
+        lifetime: 50
+        strokeFrom: 3
+        strokeTo: 0
+        colorFrom: CD59E7
+        colorTo: ffffff
+      }
+      {
+        type: WaveEffect
+        sizeFrom: 20
+        sizeTo: 0
+        lifetime: 50
+        strokeFrom: 2
+        strokeTo: 0
+        colorFrom: FFAAEF
+        colorTo: CD59E7
+      }
+      {
+        type: ParticleEffect
+        particles: 15
+        length: 30
+        lifetime: 50
+        sizeFrom: 3
+        sizeTo: 0
+        colorFrom: CD59E7
+        colorTo: FFAAEF
+        cone: 360
+      }
+    ]
+  }
+  
+  shootEffect: {
+    type: MultiEffect
+    effects: [
+      shootBig
+      {
+        type: WaveEffect
+        sizeFrom: 0
+        sizeTo: 20
+        lifetime: 15
+        strokeFrom: 3
+        strokeTo: 0
+        colorFrom: CD59E7
+        colorTo: FFAAEF
+      }
+    ]
+  }
+  
+  smokeEffect: {
+    type: MultiEffect
+    effects: [
+      shootBigSmoke
+      {
+        type: ParticleEffect
+        particles: 8
+        length: 25
+        lifetime: 30
+        sizeFrom: 4
+        sizeTo: 0
+        colorFrom: CD59E7
+        colorTo: FFAAEF
+      }
+    ]
+  }
+  
+  hitEffect: {
+    type: MultiEffect
+    effects: [
+      hitLaser
+      {
+        type: WaveEffect
+        sizeFrom: 0
+        sizeTo: 30
+        lifetime: 20
+        strokeFrom: 4
+        strokeTo: 0
+        colorFrom: CD59E7
+        colorTo: FFAAEF
+      }
+      {
+        type: ParticleEffect
+        particles: 12
+        length: 40
+        lifetime: 25
+        sizeFrom: 4
+        sizeTo: 0
+        colorFrom: FFAAEF
+        colorTo: CD59E7
+        cone: 360
+      }
+    ]
+  }
+  
+  despawnEffect: {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 15
+    lifetime: 15
+    strokeFrom: 2
+    strokeTo: 0
+    colorFrom: CD59E7
+    colorTo: FFAAEF
+  }
+}
+
+requirements: [
+  08c-00-dysprosium/100
+  08c-01-denthrahite/125
+  08c-02-hydronite/50
+]

@@ -1,0 +1,15 @@
+type: LiquidRouter
+name: Culvert Router
+size: 1
+solid: false
+underBullets: true
+health: 45
+liquidCapacity: 20
+category: liquid
+squareSprite: false
+research: 03k-02-culvert-junction
+requirements: [
+  08c-00-dysprosium/5
+  08c-01-denthrahite/10
+]
+researchCostMultiplier: 0.5

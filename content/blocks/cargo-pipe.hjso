@@ -1,0 +1,30 @@
+{
+  type: Duct
+  name: "Cargo pipe"
+  size: 1
+  health: 90
+  speed: 4
+  itemCapacity: 1
+
+  // Отрисовка
+  drawer: {
+    type: DrawMulti
+    drawers: [
+      {
+        type: DrawDuct
+        // Цвет свечения внутри трубы (как на Эрекире)
+        glowColor: ff00ff
+      }
+      {
+        // Выводит предметы наверх, чтобы они были видны в разрывах трубы
+        type: DrawItems
+      }
+    ]
+  }
+
+  requirements: [
+    copper/5
+    lead/2
+  ]
+  category: distribution
+}

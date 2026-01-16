@@ -1,0 +1,22 @@
+{
+  type: Duct
+  name: "Cargo Pipe"
+  size: 1
+  health: 90
+  speed: 4
+  itemCapacity: 1
+  
+  bridgeReplacement: 01a-03-cargo-bridge
+  junctionReplacement: 01a-01-cargo-junction
+
+placeableOn: true
+
+
+  requirements: [
+  08c-00-dysprosium/2
+]
+research: 02b-00-core-entropy
+researchCost: [
+    08c-00-dysprosium/10
+  ]
+}
