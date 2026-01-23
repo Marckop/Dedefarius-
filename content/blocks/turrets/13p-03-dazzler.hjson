@@ -11,7 +11,7 @@ shake: 2
 category: turret
 research: {
   root: false
-  parent: 13p-02-burdent
+  parent: 13p-02-burden
   planet: dedefarius
 }
 

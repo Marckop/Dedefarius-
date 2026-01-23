@@ -22,7 +22,7 @@ stepShake: 0.35
 legSplashDamage: 5
 legSplashRange: 18
 outlineColor: 1D1D23
-research: 01u-01-tamer
+research: 01u-00-tamer
 
 weapons: [
   {

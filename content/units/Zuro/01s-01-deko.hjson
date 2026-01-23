@@ -13,14 +13,10 @@ circleTarget: true
 faceTarget: true
 drawCell: true
 outlineColor: 1D1D23
-engineColor: 55D97C
 engineOffset: 7
 engineSize: 2.5
 omniMovement: true
-
 trailLength: 8
-trailColor: 55D97C
-
 mineTier: 3
 mineSpeed: 2.5
 buildSpeed: 0
@@ -46,7 +42,6 @@ weapons: [
     name: 01s-01-deko-leech
     x: 5.5
     y: 0
-    range: 10
     reload: 8
     mirror: true
     rotate: false
@@ -66,16 +61,6 @@ weapons: [
       range: 10
       
       color: 84F491
-      beamEffect: {
-        type: ParticleEffect
-        particles: 1
-        length: 0
-        lifetime: 8
-        sizeFrom: 3
-        sizeTo: 0
-        colorFrom: ffffff
-        colorTo: 62AE7F
-      }
       hitEffect: {
         type: ParticleEffect
         particles: 6
@@ -87,8 +72,6 @@ weapons: [
         colorTo: 62AE7F
         cone: 360
       }
-      
-      healPercent: 0.5
       
       shootEffect: {
         type: ParticleEffect

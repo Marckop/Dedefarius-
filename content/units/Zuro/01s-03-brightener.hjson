@@ -1,0 +1,315 @@
+type: flying
+name: brightener
+health: 1220
+armor: 20
+speed: 0.7
+accel: 0.11
+drag: 0.06
+hitSize: 30
+rotateSpeed: 1
+lowAltitude: true
+flying: true
+faceTarget: true
+drawCell: true
+outlineColor: 1D1D23
+engineOffset: 20
+engineSize: 8
+omniMovement: true
+trailLength: 30
+itemCapacity: 30
+controller: FlyingAI
+parts: [
+  {
+    y: -15
+    type: HaloPart
+    color: 84F491
+    layer: 110
+    radius: 4
+    shapes: 10
+    sides: 3
+    stroke: 10
+    haloRadius: 1
+    haloRadiusTo: 8
+    haloRotateSpeed: 2
+  }
+]
+targetAir: true
+targetGround: true
+range: 250
+
+weapons: [
+  {
+    name: 01s-03-brightener-cannonbig
+    x: 14
+    y: -4
+    reload: 180
+    mirror: true
+    rotate: false
+    rotateSpeed: 2.5
+    alternate: true
+    shootSound: brightenerShootbig
+    shootY: 15
+    recoil: 6
+    shake: 5
+    shadow: -1
+    controllable: true
+    autoTarget: true
+    top: true
+    
+    shoot: {
+      firstShotDelay: 100
+    }
+    
+    chargeSound: brightenerCharge
+    
+    bullet: {
+      type: ArtilleryBulletType
+      hitSound: hit
+      damage: 45
+      speed: 3.5
+      lifetime: 80
+      width: 16
+      height: 20
+      splashDamage: 60
+      splashDamageRadius: 35
+      
+      sprite: missile-large
+      
+      frontColor: ffffff
+      backColor: 62AE7F
+      
+      trailColor: 84F491
+      trailWidth: 4
+      trailLength: 20
+      trailEffect: {
+        type: ParticleEffect
+        particles: 4
+        length: 12
+        lifetime: 25
+        sizeFrom: 3
+        sizeTo: 0
+        colorFrom: 84F491
+        colorTo: 62AE7F
+      }
+      
+      fragBullets: 10
+      fragLifeMin: 0.4
+      fragVelocityMin: 0.6
+      fragVelocityMax: 1.5
+      fragBullet: {
+        type: MissileBulletType
+        damage: 18
+        speed: 3
+        lifetime: 40
+        width: 6
+        height: 8
+        homingPower: 0.12
+        homingRange: 120
+        weaveScale: 3
+        weaveMag: 2
+        
+        sprite: missile
+        
+        frontColor: ffffff
+        backColor: 84F491
+        
+        trailColor: 84F491
+        trailWidth: 2
+        trailLength: 8
+        
+        hitEffect: {
+          type: MultiEffect
+          effects: [
+            {
+              type: WaveEffect
+              sizeFrom: 0
+              sizeTo: 20
+              lifetime: 15
+              strokeFrom: 2
+              strokeTo: 0
+              colorFrom: 84F491
+              colorTo: 62AE7F
+            }
+            {
+              type: ParticleEffect
+              particles: 8
+              length: 25
+              lifetime: 20
+              sizeFrom: 3
+              sizeTo: 0
+              colorFrom: ffffff
+              colorTo: 84F491
+              cone: 360
+            }
+          ]
+        }
+      }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 50
+            lifetime: 30
+            strokeFrom: 4
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            line: true
+            particles: 20
+            length: 60
+            lifetime: 35
+            strokeFrom: 4
+            strokeTo: 0
+            lenFrom: 12
+            lenTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 360
+          }
+          {
+            type: ParticleEffect
+            particles: 30
+            length: 50
+            lifetime: 40
+            sizeFrom: 5
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 360
+          }
+        ]
+      }
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 20
+            length: 30
+            lifetime: 30
+            sizeFrom: 8
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 25
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 25
+            lifetime: 20
+            strokeFrom: 3
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+        ]
+      }
+      
+      chargeEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 62
+            sizeTo: 0
+            interp: pow3In
+            sizeInterp: pow5Out
+            strokeFrom: 0
+            strokeTo: 2
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            lifetime: 50
+          }
+        ]
+      }
+    }
+  }
+  {
+    name: 01s-03-brightener-cannon
+    x: 6
+    y: 4
+    reload: 120
+    mirror: true
+    rotate: true
+    rotateSpeed: 4
+    alternate: true
+    shootSound: brightenerSmall
+    shootY: 4
+    recoil: 2
+    shake: 1
+    controllable: true
+    autoTarget: true
+    top: true
+    
+    shoot: {
+      shots: 5
+      shotDelay: 3
+      spread: 8
+    }
+    
+    bullet: {
+      type: BasicBulletType
+      damage: 12
+      speed: 5
+      lifetime: 30
+      width: 8
+      height: 10
+      
+      sprite: bullet
+      
+      frontColor: ffffff
+      backColor: 62AE7F
+      
+      trailColor: 84F491
+      trailWidth: 1.5
+      trailLength: 8
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 15
+            lifetime: 12
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            particles: 6
+            length: 20
+            lifetime: 15
+            sizeFrom: 2.5
+            sizeTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 360
+          }
+        ]
+      }
+      
+      shootEffect: {
+        type: ParticleEffect
+        particles: 8
+        length: 15
+        lifetime: 15
+        sizeFrom: 3
+        sizeTo: 0
+        colorFrom: 84F491
+        colorTo: 62AE7F
+        cone: 20
+      }
+    }
+  }
+]

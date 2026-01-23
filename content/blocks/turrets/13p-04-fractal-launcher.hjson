@@ -22,7 +22,7 @@ shoot: {
 }
 
 rotateSpeed: 4
-targetAir: true
+targetAir: false
 targetGround: true
 
 ammoTypes: {

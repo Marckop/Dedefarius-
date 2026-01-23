@@ -2,7 +2,7 @@ name: "dedefarius"
 displayName: "Dedefarius"
 author: Marckop
 description: ""
-version: "0.2.1"
+version: "0.2.0"
 minGameVersion: "154"
 dependencies: [ ]
 hidden: false

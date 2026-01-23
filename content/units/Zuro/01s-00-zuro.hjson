@@ -13,13 +13,11 @@ circleTarget: true
 faceTarget: true
 drawCell: true
 outlineColor: 1D1D23
-engineColor: 55D97C
 engineOffset: 6
 engineSize: 2
 omniMovement: false
 circleTarget: false
 trailLength: 6
-trailColor: 55D97C
 mineTier: 1
 mineSpeed: 1
 buildSpeed: 0

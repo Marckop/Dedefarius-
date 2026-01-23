@@ -11,7 +11,7 @@ hovering: false
 allowLegStep: true
 groundLayer: 74
 legCount: 4
-legLength: 10
+legLength: 9
 legBaseOffset: 3
 legMoveSpace: 1
 legExtension: 2
@@ -26,19 +26,20 @@ research: 04g-00-ground-workshop
 
 weapons: [
   {
-    name: tamer-cannon
-    x: 4.5
-    y: -2
+    name: 01u-00-tamer-cannon
+    x: 6
+    y: 0
     mirror: true
     alternate: false
-    rotate: true
+    rotate: false
     rotateSpeed: 4
     reload: 120
     continuous: true
     shootSound: beamMeltdown
-    recoil: 0
+    recoil: 2
     shake: 1
-    shootY: 3
+    shootY: 5
+    top: false
     
     shoot: {
       firstShotDelay: 40
@@ -51,6 +52,7 @@ weapons: [
       width: 2.5
       lifetime: 80
       drawSize: 100
+      pierce: false
       
       colors: [
         FF6B0090

@@ -14,7 +14,7 @@ shootSound: shoot
 ammoTypes: {
   08c-00-dysprosium: {
     type: BasicBulletType
-    damage: 10
+    damage: 6
     speed: 5
     lifetime: 35
     width: 7
@@ -88,7 +88,7 @@ ammoTypes: {
 }
 
 requirements: [
-  08c-00-dysprosium/45
+  08c-00-dysprosium/120
 ]
 
 category: turret

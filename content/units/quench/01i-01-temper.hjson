@@ -1,0 +1,215 @@
+type: mech
+name: Temper
+hovering: true
+hoverable: true
+faceTarget: true
+shadowElevation: 0.2
+mechFrontSway: 0
+mechSideSway: 0
+mechStride: 0
+drag: 0.09
+outlineColor: 1D1D23
+speed: 2.5
+rotateSpeed: 8
+accel: 0.12
+groundLayer: 60
+health: 450
+armor: 4
+hitSize: 12
+itemCapacity: 30
+
+useEngineElevation: false
+lowAltitude: false
+canDrown: false
+drawCell: true
+engines: [
+  {
+  x: 4
+  y: -8
+  radius: 2
+  rotation: -90
+  }
+  {
+  x: -4
+  y: -8
+  radius: 2
+  rotation: -90
+  }
+  ]
+
+parts: [
+  {
+    type: HoverPart
+    x: 6
+    y: 4
+    mirror: true
+    radius: 7
+    phase: 0
+    stroke: 2
+    layerOffset: -1
+    color: d0e7ff
+    circles: 2
+  }
+  {
+    type: HoverPart
+    x: 6
+    y: -4
+    mirror: true
+    radius: 7
+    phase: 90
+    stroke: 2
+    layerOffset: -1
+    color: ffffff
+    circles: 2
+  }
+]
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    effect: missileTrailShort
+    minVelocity: 0.1
+    teamColor: false
+    color: d0e7ff
+    effectParam: 3
+    interval: 3
+    x: 0
+    y: -7
+  }
+  {
+    type: MoveLightningAbility
+    damage: 8
+    length: 6
+    minSpeed: 1.5
+    maxSpeed: 3
+    color: ffffff
+    lightningColor: d0e7ff
+    chance: 0.15
+    y: -3
+  }
+]
+
+targetAir: true
+targetGround: true
+range: 110
+
+weapons: [
+  {
+    name: 01i-01-temper-cannon
+    x: 8
+    y: 0
+    reload: 25
+    mirror: true
+    rotate: false
+    rotateSpeed: 6
+    shootSound: shootElude
+    shootY: 4
+    recoil: 3
+    shake: 1.5
+    top: false
+    velocityRnd: 0.3
+    
+    shoot: {
+      shots: 3
+      shotDelay: 4
+    }
+    
+    bullet: {
+      type: BasicBulletType
+      damage: 22
+      speed: 6
+      lifetime: 18
+      
+      width: 10
+      height: 14
+      shrinkY: 0
+      shrinkX: 0
+      
+      sprite: circle-bullet
+      
+      frontColor: ffffff
+      backColor: d0e7ff
+      
+      trailColor: d0e7ff
+      trailWidth: 2.5
+      trailLength: 12
+      trailInterval: 2
+      trailEffect: {
+        type: ParticleEffect
+        particles: 2
+        length: 6
+        lifetime: 15
+        sizeFrom: 2
+        sizeTo: 0
+        colorFrom: ffffff
+        colorTo: d0e7ff
+      }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 20
+            lifetime: 15
+            strokeFrom: 2.5
+            strokeTo: 0
+            colorFrom: ffffff
+            colorTo: d0e7ff
+          }
+          {
+            type: ParticleEffect
+            particles: 10
+            length: 25
+            lifetime: 20
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: ffffff
+            colorTo: d0e7ff
+            cone: 360
+          }
+        ]
+      }
+      
+      status: freezing
+      statusDuration: 90
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 12
+            length: 18
+            lifetime: 20
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: ffffff
+            colorTo: d0e7ff
+            cone: 25
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 12
+            lifetime: 12
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: d0e7ff
+            colorTo: ffffff
+          }
+        ]
+      }
+    }
+  }
+]
+
+research: {
+  parent: 01i-00-quench
+  requirements: [
+    08c-00-dysprosium/300
+    08c-01-denthrahite/250
+    08c-03-fragileum/200
+  ]
+}

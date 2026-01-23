@@ -13,11 +13,9 @@ circleTarget: true
 faceTarget: true
 drawCell: true
 outlineColor: 1D1D23
-engineColor: FFA665
 engineOffset: 7
 engineSize: 2.5
 trailLength: 8
-trailColor: FFA665
 research: 04g-01-airfield-workshop
 
 weapons: [

@@ -1,0 +1,109 @@
+type: mech
+name: Quench
+hovering: true
+hoverable: true
+faceTarget: true
+shadowElevation: 0.15
+mechFrontSway: 0
+mechSideSway: 0
+mechStride: 0
+drag: 0.08
+outlineColor: 1D1D23
+engineOffset: 7
+speed: 3
+rotateSpeed: 10
+accel: 0.1
+groundLayer: 60
+health: 220
+armor: 2
+hitSize: 9
+itemCapacity: 20
+useEngineElevation: false
+lowAltitude: false
+canDrown: false
+drawCell: true
+
+parts: [
+  {
+    type: HoverPart
+    x: 0
+    y: -5
+    mirror: false
+    radius: 8
+    phase: 90
+    stroke: 2
+    layerOffset: -1
+    color: d0e7ff
+    }
+]
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    effect: missileTrailShort
+    minVelocity: 0.1
+    teamColor: false
+    color: d0e7ff
+    effectParam: 2
+    x: 0
+    y: -7
+  }
+]
+
+targetAir: false
+targetGround: true
+range: 90
+
+weapons: [
+  {
+    name: 01i-00-quench-freezer
+    x: 0
+    y: 0
+    reload: 8
+    mirror: true
+    rotate: false
+    rotateSpeed: 8
+    shootSound: laserZuro
+    continuous: true
+    shootY: 5
+    shootX: 5
+    recoil: 1
+    top: false
+    
+    bullet: {
+      type: ContinuousLaserBulletType
+      length: 90
+      damage: 6
+      width: 2.5
+      pierce: false
+      
+      colors: [d0e7ff44, ffffffaa, ffffff
+      ]
+      
+      hitEffect: {
+        type: ParticleEffect
+        particles: 4
+        length: 8
+        lifetime: 12
+        sizeFrom: 2
+        sizeTo: 0
+        colorFrom: ffffff
+        colorTo: d0e7ff
+        cone: 360
+      }
+      
+      status: freezing
+      statusDuration: 60
+      
+      incendChance: 0
+    }
+  }
+]
+
+research: {
+  parent: 02b-00-core-entropy
+  requirements: [
+    08c-00-dysprosium/120
+    08c-01-denthrahite/90
+  ]
+}

@@ -6,9 +6,9 @@ mesh: [
     planet: dedefarius
     divisions: 5
     seed: 27
-    radius: 1.100
-    color1: 55D97C
-    color2: 62E7A2
+    radius: 1.1
+    color1: 282636
+    color2: 3a3348
     octaves: 5
     persistence: 1.1
   }
@@ -18,8 +18,8 @@ mesh: [
     divisions: 7
     seed: 162
     radius: 1
-    color1: 2a7d77
-    color2: 3d9d97
+    color1: 1a1a24
+    color2: 282636
     octaves: 2
     persistence: 0.9
     mag: 0.3
@@ -30,8 +30,8 @@ mesh: [
     divisions: 5
     seed: 203
     radius: 1.245
-    color1: 1ec9b6
-    color2: 3de8d4
+    color1: 3a3348
+    color2: 4a4358
     octaves: 4
     persistence: 0.5
     mag: 0.7
@@ -42,8 +42,8 @@ mesh: [
     divisions: 4
     seed: 404
     radius: 1.251
-    color1: 7dffd9
-    color2: a0ffe8
+    color1: 4a4358
+    color2: 5a5368
     octaves: 3
     persistence: 0.4
     mag: 0.5
@@ -57,7 +57,7 @@ cloudMesh: [
     speed: -0.8
     radius: 0.14
     divisions: 6
-    color: 7dffd966
+    color: 3b82f666
     octaves: 4
     persistence: 0.6
     scl: 0.8
@@ -69,7 +69,7 @@ cloudMesh: [
     speed: 1.2
     radius: 0.11
     divisions: 5
-    color: a0ffe8aa
+    color: 60a5faaa
     octaves: 3
     persistence: 0.5
     scl: 1.3
@@ -81,7 +81,7 @@ cloudMesh: [
     speed: -1.5
     radius: 0.08
     divisions: 4
-    color: 5affccbb
+    color: 2563ebbb
     octaves: 2
     persistence: 0.7
     scl: 1.8
@@ -101,6 +101,8 @@ generator: {
   radMax: 600
 }
 
+campaignRuleDefaults.fog: true
+campaignRuleDefaults.showSpawns: true
 orbitRadius: 120
 sectorSize: 1
 allowLaunchSchematics: false
@@ -119,8 +121,8 @@ updateLighting: true
 sectorSeed: 14513
 bloom: true
 visible: true
-atmosphereColor: 2ec9b6
-iconColor: 3de8d4
+atmosphereColor: 3b82f6
+iconColor: 4a4358
 hasAtmosphere: true
 clearSectorOnLose: true
 allowWaves: true
@@ -129,3 +131,7 @@ defaultCore: 02b-00-core-entropy
 parent: sun
 solarSystem: sun
 launchCandidates: []
+weathers: [
+  vulcanic-storm
+  ashen
+]

@@ -5,7 +5,7 @@ armor: 5
 speed: 3.2
 accel: 0.11
 drag: 0.06
-hitSize: 10
+hitSize: 20
 rotateSpeed: 9
 lowAltitude: true
 flying: true
@@ -13,21 +13,17 @@ circleTarget: true
 faceTarget: true
 drawCell: true
 outlineColor: 1D1D23
-engineColor: 55D97C
 engineOffset: 13
 engineSize: 4
 omniMovement: true
-
 trailLength: 10
-trailColor: 55D97C
-
 mineTier: 3
 mineSpeed: 2.5
 buildSpeed: 3
 itemCapacity: 30
 
 controller: BuilderAI
-mineWalls: true
+mineWalls: false
 mineFloor: true
 buildBeamOffset: 3
 
@@ -37,75 +33,176 @@ mineItems: [
   08c-03-fragileum
 ]
 
-targetAir: false
+targetAir: true
 targetGround: true
-range: 90
-
+range: 100
 weapons: [
   {
     name: 01s-02-teta-cannon
     x: 9
     y: 0
-    range: 20
-    reload: 15
+    reload: 55
     mirror: true
     rotate: false
-    alternate: true
-    rotateSpeed: 10
+    alternate: false
     shootSound: shootTeta
     shootY: 10
-    recoil: 3
+    recoil: 4
+    shake: 2
     shadow: -1
     controllable: true
     autoTarget: true
-    top: false
+    top: tru
+    
+    shoot: {
+  dest: [
+    {
+    type: ShootHelix
+    scl: 3
+    mag: 2
+    }
+  ]
+}
+
     
     bullet: {
-      type: SapBulletType
-      sapStrength: 0.8
-      length: 100
-      damage: 20
-      shootEffect: shootSmall
-      hitColor: 84f491
-      color: 84f491
-      despawnEffect: none
-      width: 0.55
-      lifetime: 25
-      knockback: -1
-      }
-      hitEffect: {
+      type: BasicBulletType
+      speed: 3
+      lifetime: 35
+      damage: 35
+      
+      width: 14
+      height: 14
+      shrinkY: 0
+      shrinkX: 0
+      
+      sprite: circle-bullet
+      
+      frontColor: ffffff
+      backColor: 62AE7F
+      
+      trailColor: 84F491
+      trailWidth: 3
+      trailLength: 15
+      trailInterval: 2
+      trailEffect: {
         type: ParticleEffect
-        particles: 6
+        particles: 3
         length: 8
-        lifetime: 12
+        lifetime: 20
         sizeFrom: 2
         sizeTo: 0
         colorFrom: 84F491
         colorTo: 62AE7F
-        cone: 360
+      }
+      weaveScale: 2
+      weaveMag: 10
+      weaveRandom: false
+      homingPower: 0.1
+      homingRange: 100
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 30
+            lifetime: 20
+            strokeFrom: 3
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            line: true
+            particles: 12
+            length: 40
+            lifetime: 25
+            strokeFrom: 3
+            strokeTo: 0
+            lenFrom: 8
+            lenTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 360
+          }
+          {
+            type: ParticleEffect
+            particles: 20
+            length: 35
+            lifetime: 30
+            sizeFrom: 4
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 360
+          }
+        ]
       }
       
-      healPercent: 5
+      despawnEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 30
+            lifetime: 20
+            strokeFrom: 3
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            line: true
+            particles: 12
+            length: 40
+            lifetime: 25
+            strokeFrom: 3
+            strokeTo: 0
+            lenFrom: 8
+            lenTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 360
+          }
+        ]
+      }
+      
+      lightningColor: 84F491
+      lightning: 6
+      lightningLength: 8
+      lightningDamage: 10
       
       shootEffect: {
-        type: ParticleEffect
-        particles: 4
-        length: 6
-        lifetime: 10
-        sizeFrom: 1.5
-        sizeTo: 0.001
-        colorFrom: 84F491
-        colorTo: 62AE7F
-        cone: 25
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 15
+            length: 20
+            lifetime: 25
+            sizeFrom: 7
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 30
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 15
+            lifetime: 15
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+        ]
       }
     }
+  }
 ]
-
-research: {
-  parent: 01s-01-deko
-  requirements: [
-    08c-00-dysprosium/400
-    08c-01-denthrahite/500
-    08c-03-fragileum/300
-  ]
-}
