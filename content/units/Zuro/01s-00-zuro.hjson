@@ -1,0 +1,132 @@
+type: flying
+name: Zuro
+health: 150
+armor: 1
+speed: 2.8
+accel: 0.09
+drag: 0.05
+hitSize: 8
+rotateSpeed: 6
+lowAltitude: true
+flying: true
+circleTarget: true
+faceTarget: true
+drawCell: true
+outlineColor: 1D1D23
+engineOffset: 6
+engineSize: 2
+omniMovement: false
+circleTarget: false
+trailLength: 6
+mineTier: 1
+mineSpeed: 1
+buildSpeed: 0
+itemCapacity: 10
+controller: BuilderAI
+mineWalls: true
+mineFloor: true
+buildBeamOffset: 3
+
+mineItems: [
+  08c-00-dysprosium
+  08c-01-denthrahite
+]
+
+targetAir: true
+targetGround: true
+range: 80
+
+weapons: [
+  {
+    name: 01s-00-zuro-railgun
+    x: 0
+    y: 6
+    reload: 45
+    mirror: false
+    rotate: false
+    rotateSpeed: 8
+    shootSound: laserZuro
+    shootY: 3
+    recoil: 1.5
+    shake: 0.5
+    shadow: -1
+    controllable: true
+    autoTarget: true
+    top: false
+    
+    bullet: {
+      type: LaserBulletType
+      length: 80
+      damage: 5
+      width: 8
+      
+      colors: [84F491, 62AE7F]
+      
+      hitColor: 84F491
+      
+      smokeEffect: none
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 8
+            length: 12
+            lifetime: 15
+            sizeFrom: 2.5
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 25
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 10
+            lifetime: 12
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+        ]
+      }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 12
+            length: 20
+            lifetime: 20
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 360
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 15
+            lifetime: 15
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: 62AE7F
+            colorTo: 84F491
+          }
+        ]
+      }
+    }
+  }
+]
+
+research: {
+  parent: 01s-00-integrity
+  requirements: [
+    08c-00-dysprosium/150
+    08c-01-denthrahite/200
+  ]
+}

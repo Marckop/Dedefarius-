@@ -1,0 +1,5 @@
+type: StaticWall
+name: Mica wall
+attributes: {
+  mica: 1
+}

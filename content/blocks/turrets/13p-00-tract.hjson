@@ -1,0 +1,98 @@
+type: ItemTurret
+name: Tract
+size: 2
+health: 800
+reload: 25
+range: 140
+inaccuracy: 20
+shootCone: 15
+rotateSpeed: 3
+targetAir: false
+targetGround: true
+shootSound: shoot
+
+ammoTypes: {
+  08c-00-dysprosium: {
+    type: BasicBulletType
+    damage: 6
+    speed: 5
+    lifetime: 35
+    width: 7
+    height: 9
+    frontColor: FFBAF1
+    backColor: F376FF
+    
+    shootEffect: {
+      type: ParticleEffect
+      particles: 5
+      length: 15
+      lifetime: 20
+      sizeFrom: 2
+      sizeTo: 0
+      colorFrom: FFBAF1
+      colorTo: F376FF
+      cone: 25
+    }
+    
+    smokeEffect: shootSmallSmoke
+    
+    hitEffect: {
+      type: ParticleEffect
+      particles: 8
+      length: 20
+      lifetime: 18
+      sizeFrom: 2.5
+      sizeTo: 0
+      colorFrom: FFBAF1
+      colorTo: F376FF
+      cone: 360
+    }
+  }
+  
+  08c-01-denthrahite: {
+    type: BasicBulletType
+    damage: 16
+    speed: 5
+    lifetime: 35
+    width: 7
+    height: 9
+    frontColor: 7FFFD4
+    backColor: 3CB371
+    
+    shootEffect: {
+      type: ParticleEffect
+      particles: 5
+      length: 15
+      lifetime: 20
+      sizeFrom: 2
+      sizeTo: 0
+      colorFrom: 7FFFD4
+      colorTo: 3CB371
+      cone: 25
+    }
+    
+    smokeEffect: shootSmallSmoke
+    
+    hitEffect: {
+      type: ParticleEffect
+      particles: 8
+      length: 20
+      lifetime: 18
+      sizeFrom: 2.5
+      sizeTo: 0
+      colorFrom: 7FFFD4
+      colorTo: 3CB371
+      cone: 360
+    }
+  }
+}
+
+requirements: [
+  08c-00-dysprosium/120
+]
+
+category: turret
+research: 02b-00-core-entropy
+researchCost: [
+  08c-00-dysprosium/150
+]

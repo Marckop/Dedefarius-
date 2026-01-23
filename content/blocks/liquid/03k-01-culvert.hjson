@@ -1,0 +1,16 @@
+type: Conduit
+name: Culvert
+category: liquid
+research: 03k-00-piston-pump
+requirements: [
+  08c-00-dysprosium/1
+  08c-01-denthrahite/2
+]
+health: 35
+squareSprite: false
+solid: false
+leaks: true
+junctionReplacement: 03k-02-culvert-junction
+bridgeReplacement: 03k-03-culvert-bridge
+underBullets: true
+researchCostMultiplier: 0.5

@@ -1,0 +1,21 @@
+{
+  type: ItemBridge
+  name: "Cargo Bridge"
+  size: 1
+  health: 120
+
+  range: 4
+
+  transportTime: 5
+  
+  hasItems: true
+  itemCapacity: 10
+
+  requirements: [
+  08c-00-dysprosium/10
+]
+research: 01a-01-cargo-junction
+researchCost: [
+    08c-00-dysprosium/30
+  ]
+}

@@ -1,0 +1,23 @@
+type: ParticleWeather
+name: Vulcanic storm
+duration: 24000
+attrs: {
+  light: -0.25
+}
+status: none
+drawNoise: true
+noiseColor: 4a435888
+noiseScale: 750
+drawParticles: true
+particleRegion: particle
+yspeed: -3.5
+xspeed: 3
+padding: 16
+density: 600
+baseSpeed: 3
+sizeMin: 4
+sizeMax: 10
+color: 4a4358
+
+sound: wind
+soundVol: 0.06

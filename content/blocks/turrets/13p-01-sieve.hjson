@@ -1,0 +1,142 @@
+type: ItemTurret
+name: Sieve
+size: 2
+health: 600
+reload: 20
+range: 160
+inaccuracy: 5
+rotateSpeed: 10
+targetAir: true
+targetGround: false
+shootCone: 20
+recoil: 1
+shake: 0.5
+shootSound: shootSap
+
+shoot: {
+  type: ShootAlternate
+  shots: 2
+  shotDelay: 4
+  spread: 4
+}
+
+ammoTypes: {
+  08c-01-denthrahite: {
+    type: BasicBulletType
+    lifetime: 30
+    speed: 5.5
+    damage: 7
+    
+    width: 1
+    height: 3
+    shrinkY: 0
+    shrinkX: 0
+    
+    frontColor: 3CB371
+    backColor: 7FFFD4
+    
+    pierce: true
+    pierceCap: 2
+    pierceBuilding: false
+    
+    trailWidth: 2
+    trailLength: 8
+    trailColor: 7FFFD4
+    
+    hitSound: hit
+    
+    shootEffect: {
+      type: ParticleEffect
+      particles: 8
+      length: 18
+      lifetime: 12
+      sizeFrom: 2
+      sizeTo: 0
+      colorFrom: 7FFFD4
+      colorTo: 3CB371
+      cone: 20
+    }
+    
+    hitEffect: {
+      type: MultiEffect
+      effects: [
+        {
+          type: WaveEffect
+          sizeFrom: 0
+          sizeTo: 15
+          lifetime: 12
+          strokeFrom: 2
+          strokeTo: 0
+          colorFrom: 7FFFD4
+          colorTo: 3CB371
+        }
+        {
+          type: ParticleEffect
+          particles: 10
+          length: 20
+          lifetime: 15
+          sizeFrom: 2
+          sizeTo: 0
+          colorFrom: 7FFFD4
+          colorTo: 3CB371
+          cone: 360
+        }
+      ]
+    }
+    
+    fragBullets: 4
+    fragRandomSpread: 40
+    fragSpread: 15
+    fragVelocityMin: 0.6
+    fragVelocityMax: 1.2
+    fragLifeMin: 0.5
+    
+    fragBullet: {
+      type: BasicBulletType
+      sprite: bullet
+      lifetime: 12
+      speed: 3.5
+      damage: 3
+      
+      width: 1
+      height: 2
+      
+      frontColor: 7FFFD4
+      backColor: 3CB371
+      
+      pierce: false
+      
+      trailWidth: 0.6
+      trailLength: 3
+      trailColor: 2ec9b6
+      
+      hitEffect: {
+        type: ParticleEffect
+        particles: 3
+        length: 8
+        lifetime: 8
+        sizeFrom: 1
+        sizeTo: 0
+        colorFrom: 7FFFD4
+        colorTo: 3CB371
+        cone: 360
+      }
+    }
+  }
+}
+
+
+requirements: [
+  08c-01-denthrahite/120
+  08c-00-dysprosium/80
+]
+
+category: turret
+
+research: {
+  parent: 13p-00-tract
+  requirements: [
+    08c-00-dysprosium/200
+    08c-01-denthrahite/320
+  ]
+}

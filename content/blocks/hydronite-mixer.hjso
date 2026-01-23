@@ -1,0 +1,69 @@
+  "type": "GenericCrafter",
+  "health": 450,
+  "size": 2,
+  "hasItems": true,
+  "craftTime": 50,
+ craftEffect: {
+    "type": "MultiEffect",
+	"effects": [
+            {
+              type: ParticleEffect
+              particles: 5
+              lifetime: 150
+              length: 15
+              sizeFrom: 1
+              lightOpacity : 0
+              sizeTo: 0.1
+              colorFrom: 55E5FF
+              colorTo: 000000
+              strokeFrom: 0.5
+              strokeTo: 0
+              interp: pow3Out
+              spin: 5
+              sizeInterp: pow2In
+           }
+	]
+  }
+	"drawer": {
+	"type": "DrawMulti",
+        "drawers": [
+                 {
+        "type": "DrawRegion"
+        suffix: -bottom
+        drawLiquid: water
+        }
+                        {
+              "type": "DrawRegion"
+        suffix: -rotator
+        rotateSpeed: 5
+        spinSprite: true
+  }
+                  {
+              "type": "DrawRegion"
+        suffix: -top
+        }
+        ]
+        }
+  "hasPower": true,
+  "hasLiquids": true,
+  "updateEffect": "none",
+  "consumes": {
+  "power": 1.70,
+    "liquids": [
+      "water/0.1"
+],
+  "items": [
+    sand/4
+    ],
+  },
+  "requirements": [
+    copper/30
+  ],
+  "category": "crafting",
+  "outputItem": "hydronite/2"
+research: {
+    parent: copper
+},
+researchCost: [
+    copper/400
+  ]

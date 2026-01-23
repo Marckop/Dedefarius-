@@ -1,0 +1,15 @@
+{
+  type: Router
+  name: "Cargo Router"
+  size: 1
+  health: 100
+  speed: 8
+
+  requirements: [
+  08c-00-dysprosium/10
+]
+research: 01a-00-cargo-pipe
+researchCost: [
+    08c-00-dysprosium/50
+  ]
+}

@@ -1,0 +1,11 @@
+type: LiquidJunction
+name: Culvert Junction
+solid: false
+category: liquid
+squareSprite: false
+research: 03k-01-culvert
+requirements: [
+  08c-00-dysprosium/8
+  08c-01-denthrahite/10
+]
+researchCostMultiplier: 0.5

@@ -1,0 +1,92 @@
+type: PowerTurret
+name: Burden
+size: 1
+category: turret
+requirements: [
+  08c-00-dysprosium/30
+  08c-01-denthrahite/25
+]
+
+health: 350
+armor: 1
+range: 160
+reload: 90
+recoil: 2
+shake: 1
+shootSound: shotBurden
+
+shoot: {
+  shots: 1
+  shotDelay: 0
+}
+
+rotateSpeed: 4
+targetAir: false
+targetGround: true
+
+shootType: {
+  type: BasicBulletType
+  speed: 10
+  lifetime: 20
+  damage: 12
+  pierce: true
+  pierceCap: 4
+  
+  width: 3
+  height: 14
+  
+  frontColor: ffffff
+  backColor: 55D97C
+  
+  trailColor: 55D97C
+  trailWidth: 1.5
+  trailLength: 20
+  
+  hitEffect: {
+    type: ParticleEffect
+    particles: 6
+    length: 12
+    lifetime: 12
+    sizeFrom: 2
+    sizeTo: 0
+    colorFrom: 55D97C
+    colorTo: 3de8d4
+    cone: 360
+  }
+  
+  despawnEffect: {
+    type: ParticleEffect
+    particles: 4
+    length: 10
+    lifetime: 10
+    sizeFrom: 1.5
+    sizeTo: 0
+    colorFrom: 55D97C
+    colorTo: 3de8d4
+    cone: 360
+  }
+}
+
+consumes: {
+  power: 1
+}
+
+shootEffect: {
+  type: ParticleEffect
+  particles: 8
+  length: 12
+  lifetime: 20
+  sizeFrom: 2
+  sizeTo: 0
+  colorFrom: 55D97C
+  colorTo: 3de8d4
+  cone: 25
+}
+
+research: {
+  parent: 13p-00-tract
+  requirements: [
+    08c-00-dysprosium/80
+    08c-01-denthrahite/60
+  ]
+}
