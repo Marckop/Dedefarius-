@@ -14,7 +14,6 @@ range: 180
 reload: 1
 recoil: 3
 shake: 5
-shootSound: missile
 
 shoot: {
   shots: 1

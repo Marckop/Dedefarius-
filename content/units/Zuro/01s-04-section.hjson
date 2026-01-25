@@ -1,0 +1,423 @@
+type: flying
+name: Section
+health: 10200
+armor: 12
+speed: 0.5
+accel: 0.09
+drag: 0.05
+hitSize: 40
+rotateSpeed: 0.8
+lowAltitude: true
+flying: true
+faceTarget: true
+drawCell: true
+outlineColor: 1D1D23
+engineColor: 84F491
+omniMovement: true
+
+trailLength: 40
+trailColor: 84F491
+
+itemCapacity: 80
+
+targetAir: false
+targetGround: true
+range: 240
+
+parts: [
+  {
+    type: HaloPart
+    x: 0
+    y: -30
+    color: 84F491
+    layer: 110
+    radius: 3
+    shapes: 100
+    sides: 10
+    stroke: 3
+    haloRadius: 3
+    haloRadiusTo: 10
+    haloRotateSpeed: 2
+  }
+]
+
+engines: [
+  {
+  x: 10
+  y: -28
+  radius: 5
+  rotation: -90
+  }
+  {
+  x: -10
+  y: -28
+  radius: 5
+  rotation: -90
+  }
+  {
+  x: 0
+  y: -30
+  radius: 10
+  rotation: -90
+  }
+  ]
+
+
+weapons: [
+  {
+    name: 01s-04-section-cannon1
+    x: 8
+    y: -12
+    reload: 8
+    mirror: true
+    rotate: false
+    shootSound: shootSectionSmall
+    continuous: false
+    shootY: 5
+    recoil: 0.5
+    top: true
+    
+    bullet: {      
+      type: BasicBulletType
+      damage: 18
+      speed: 5
+      lifetime: 100
+      width: 8
+      height: 8
+      sprite: circle-bullet
+      shrinkY: 0
+      shrinkX: 0
+      frontColor: 84F491
+      backColor: 62AE7F
+      trailColor: 84F491
+      trailWidth: 2
+      trailLength: 10
+      trailInterval: 2
+      trailEffect: {
+      type: ParticleEffect
+      particles: 2
+      cone: 360
+      lifetime: 15
+      sizeFrom: 2
+      sizeTo: 0
+      colorFrom: 84F491
+      colorTo: 62AE7F
+     }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 18
+            lifetime: 15
+            strokeFrom: 2
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            particles: 10
+            length: 20
+            lifetime: 18
+            sizeFrom: 3
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 360
+          }
+        ]
+      }
+      
+      shootEffect: {
+        type: ParticleEffect
+        particles: 8
+        length: 12
+        lifetime: 15
+        sizeFrom: 2.5
+        sizeTo: 0
+        colorFrom: 84F491
+        colorTo: 62AE7F
+        cone: 20
+      }
+      
+      status: burning
+      statusDuration: 90
+    }
+  }
+  {
+    name: 01s-04-section-cannon2
+    x: 12
+    y: 0
+    reload: 60
+    mirror: true
+    rotate: false
+    shootSound: laserZuro
+    shootY: 8
+    recoil: 4
+    shake: 3
+    top: true
+    
+    shoot: {
+      firstShotDelay: 60
+    }
+    
+    bullet: {
+      type: LaserBulletType
+      damage: 150
+      speed: 0
+      colors: [62AE7F, 84F491]
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            line: true
+            particles: 1
+            length: 180
+            lifetime: 15
+            lenFrom: 180
+            lenTo: 0
+            colorFrom: 84F491
+            colorTo: ffffff
+          }
+          {
+            type: ParticleEffect
+            particles: 5
+            length: 180
+            lifetime: 20
+            sizeFrom: 2
+            sizeTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 5
+          }
+        ]
+      }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 40
+            lifetime: 25
+            strokeFrom: 4
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            particles: 25
+            length: 50
+            lifetime: 30
+            sizeFrom: 6
+            sizeTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 360
+          }
+          {
+            type: ParticleEffect
+            line: true
+            particles: 15
+            length: 45
+            lifetime: 28
+            strokeFrom: 3
+            strokeTo: 0
+            lenFrom: 12
+            lenTo: 0
+            colorFrom: 84F491
+            colorTo: ffffff
+            cone: 360
+          }
+        ]
+      }
+     
+      rangeOverride: 180
+    }
+  }
+  {
+    name: 01s-04-section-cannon3
+    x: 14
+    y: 12
+    reload: 1000
+    mirror: true
+    rotate: false
+    alternate: false
+    shootStatus: unmoving
+    shootSound: shootSection
+    chargeSound: SectionCharge
+    shootY: 10
+    recoil: 8
+    shake: 8
+    top: true
+    
+    shoot: {
+      firstShotDelay: 200
+    }
+    
+    bullet: {
+      type: BasicBulletType
+      damage: 100
+      speed: 4
+      lifetime: 90
+      width: 22
+      height: 22
+      shrinkY: 0
+      shrinkX: 0
+      sprite: circle-bullet
+      frontColor: ffffff
+      backColor: 84F491
+      trailColor: 84F491
+      trailWidth: 6
+      trailLength: 35
+      trailInterval: 1
+      trailEffect: {
+      type: ParticleEffect
+      particles: 5
+      cone: 360
+      lifetime: 30
+      sizeFrom: 5
+      sizeTo: 0
+      colorFrom: 84F491
+      colorTo: 62AE7F
+     }
+      
+      collidesGround: true
+      collidesTiles: false
+      collidesAir: false
+      
+      splashDamage: 180
+      splashDamageRadius: 60
+      
+      lightning: 3
+      lightningLength: 10
+      lightningDamage: 30
+      lightningColor: 84F491
+      
+      lightningType: {
+        damage: 20
+        length: 8
+        lightningColor: 84F491
+      }
+      
+      intervalBullets: 1
+      bulletInterval: 5
+      intervalRandomSpread: 0
+      intervalBullet: {
+        type: LightningBulletType
+        damage: 25
+        lightningLength: 12
+        lightningColor: 84F491
+        lightningType: {
+          damage: 15
+          length: 6
+          lightningColor: 62AE7F
+        }
+      }
+      
+        chargeEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 62
+            sizeTo: 0
+            interp: pow3In
+            strokeFrom: 0
+            strokeTo: 2
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            lifetime: 200
+          }
+        ]
+      }
+      
+      hitEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 100
+            lifetime: 50
+            strokeFrom: 8
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+          }
+          {
+            type: ParticleEffect
+            line: true
+            particles: 30
+            length: 90
+            lifetime: 55
+            strokeFrom: 6
+            strokeTo: 0
+            lenFrom: 25
+            lenTo: 0
+            colorFrom: ffffff
+            colorTo: 84F491
+            cone: 360
+          }
+          {
+            type: ParticleEffect
+            particles: 60
+            length: 80
+            lifetime: 60
+            sizeFrom: 12
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 360
+          }
+        ]
+      }
+      
+      shootEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 50
+            length: 70
+            lifetime: 60
+            sizeFrom: 12
+            sizeTo: 0
+            colorFrom: 84F491
+            colorTo: 62AE7F
+            cone: 25
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 60
+            lifetime: 50
+            strokeFrom: 8
+            strokeTo: 0
+            colorFrom: 84F491
+            colorTo: ffffff
+          }
+        ]
+      }
+      
+      status: melting
+      statusDuration: 300
+    }
+  }
+]
+
+research: {
+  parent: 01s-02-teta
+  requirements: [
+    08c-00-dysprosium/2000
+    08c-01-denthrahite/2500
+    08c-03-fragileum/1500
+  ]
+}

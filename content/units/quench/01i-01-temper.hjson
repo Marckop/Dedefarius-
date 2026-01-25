@@ -83,7 +83,6 @@ abilities: [
     minSpeed: 1.5
     maxSpeed: 3
     color: ffffff
-    lightningColor: d0e7ff
     chance: 0.15
     y: -3
   }

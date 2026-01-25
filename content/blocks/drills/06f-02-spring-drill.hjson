@@ -58,7 +58,7 @@ updateEffectChance: 0.05
 
 shake: 2
 
-ambientSound: drill
+ambientSound: drillImpact
 ambientSoundVolume: 0.04
 
 consumes: {

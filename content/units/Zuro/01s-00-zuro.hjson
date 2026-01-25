@@ -59,6 +59,7 @@ weapons: [
       length: 80
       damage: 5
       width: 8
+      recoil: 10
       
       colors: [84F491, 62AE7F]
       

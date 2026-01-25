@@ -52,18 +52,13 @@ weapons: [
     shadow: -1
     controllable: true
     autoTarget: true
-    top: tru
+    top: true
     
     shoot: {
-  dest: [
-    {
-    type: ShootHelix
-    scl: 3
-    mag: 2
+      type: ShootHelix
+      mag: 1
+      scl: 3
     }
-  ]
-}
-
     
     bullet: {
       type: BasicBulletType

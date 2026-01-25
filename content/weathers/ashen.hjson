@@ -1,8 +1,6 @@
 type: ParticleWeather
 name: Ashen
 color: 28263666
-minColor: 4a4358aa
-maxColor: 5a5368dd
 noiseColor: 28263666
 drawNoise: true
 particleRegion: particle
@@ -12,5 +10,3 @@ sizeMin: 2
 baseSpeed: 2
 density: 900
 opacityMultiplier: 1
-sound: windhowl
-soundVol: 0.3
